@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<script>
+	function ArrayDim2(_row,_col) {
+		var obj = {
+			row: _row,
+			col: _col,
+			datas: new Array(_row * _col),
+			at: (i,j) =>{
+				return obj.datas[j*obj.row +i];
+	        },
+    	  	set: (i,j,v) =>{
+				obj.datas[j*obj.row +i] = v;
+	  		},
+		}
+		return obj;
+	}
+
+	function btnadd()
+	{
+		const aa = ArrayDim2(5,5)
+		aa.set(2,3,5);
+		let b = aa.at(2,3)
+		let debug = 1;
+	}
+</script>
+<body>
+增加： <input id="input_add" type="text" size="30" value='' />
+<button id="btn_add" onclick=btnadd()>增加</button><br/><br/>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+</body>
+</html>

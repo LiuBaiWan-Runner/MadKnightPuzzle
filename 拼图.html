@@ -6,16 +6,42 @@
 		var obj = {
 			row: _row,
 			col: _col,
-			datas: new Array(_row * _col),
+			buffer: new Array(_row * _col),
 			at: (i,j) =>{
-				return obj.datas[j*obj.row +i];
+				return obj.buffer[j*obj.row +i];
 	        },
     	  	set: (i,j,v) =>{
-				obj.datas[j*obj.row +i] = v;
+				obj.buffer[j*obj.row +i] = v;
 	  		},
 		}
-		return obj;
+		return obj
 	}
+    function Block(){
+        var obj = ArrayDim2(3,3)
+        obj.prototype.init = function(s){
+            if(s.size()!=3){
+                return false
+            }
+            let table = [
+                [0,0,0],
+                [0,0,1],
+                [0,1,0],
+                [0,1,1],
+                [1,0,0],
+                [1,0,1],
+                [1,1,0],
+                [1,1,1]
+            ]
+            for(let i=0;i<3;i++){
+                if('0' <= s[i] && s[i] <= '7'){
+
+                }else{
+                    retur false;
+                }
+            }
+        }
+        return obj
+    }
 
 	function btnadd()
 	{
